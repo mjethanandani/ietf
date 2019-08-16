@@ -1,0 +1,851 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "ietf-l2vpn API generated from ietf-l2vpn@2018-02-06.yang",
+        "title": "ietf-l2vpn API"
+    },
+    "host": "localhost:8080",
+    "basePath": "/restconf",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/config/l2vpn/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: l2vpn",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "l2vpnbody object",
+                        "schema": {
+                            "$ref": "#/definitions/L2vpnSchema",
+                            "l2vpn": {
+                                "description": "L2VPN specific data",
+                                "properties": {
+                                    "redundancyGroupTemplates": {
+                                        "description": "redundancy group templates",
+                                        "properties": {
+                                            "redundancyGroupTemplate": {
+                                                "items": {
+                                                    "allOf": [
+                                                        {
+                                                            "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                                                        },
+                                                        {
+                                                            "properties": {
+                                                                "name": {
+                                                                    "type": "string",
+                                                                    "description": "name"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "x-key": "name",
+                                                "type": "array",
+                                                "description": "redundancy-group-template"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "name": "l2vpn",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update l2vpn by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateL2vpnById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: l2vpn",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "l2vpnbody object",
+                        "schema": {
+                            "$ref": "#/definitions/L2vpnSchema",
+                            "l2vpn": {
+                                "description": "L2VPN specific data",
+                                "properties": {
+                                    "redundancyGroupTemplates": {
+                                        "description": "redundancy group templates",
+                                        "properties": {
+                                            "redundancyGroupTemplate": {
+                                                "items": {
+                                                    "allOf": [
+                                                        {
+                                                            "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                                                        },
+                                                        {
+                                                            "properties": {
+                                                                "name": {
+                                                                    "type": "string",
+                                                                    "description": "name"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "x-key": "name",
+                                                "type": "array",
+                                                "description": "redundancy-group-template"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "name": "l2vpn",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create l2vpn by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createL2vpnById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: l2vpn",
+                "summary": "Delete l2vpn by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteL2vpnById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/L2vpnSchema",
+                            "l2vpn": {
+                                "description": "L2VPN specific data",
+                                "properties": {
+                                    "redundancyGroupTemplates": {
+                                        "description": "redundancy group templates",
+                                        "properties": {
+                                            "redundancyGroupTemplate": {
+                                                "items": {
+                                                    "allOf": [
+                                                        {
+                                                            "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                                                        },
+                                                        {
+                                                            "properties": {
+                                                                "name": {
+                                                                    "type": "string",
+                                                                    "description": "name"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                },
+                                                "x-key": "name",
+                                                "type": "array",
+                                                "description": "redundancy-group-template"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: l2vpn",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve l2vpn",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveL2vpn"
+            }
+        },
+        "/config/l2vpn/redundancy-group-templates/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: redundancy-group-templates",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "redundancy-group-templatesbody object",
+                        "schema": {
+                            "$ref": "#/definitions/RedundancyGroupTemplatesSchema",
+                            "redundancyGroupTemplates": {
+                                "description": "redundancy group templates",
+                                "properties": {
+                                    "redundancyGroupTemplate": {
+                                        "items": {
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                                                },
+                                                {
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string",
+                                                            "description": "name"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "x-key": "name",
+                                        "type": "array",
+                                        "description": "redundancy-group-template"
+                                    }
+                                }
+                            }
+                        },
+                        "name": "redundancy-group-templates",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update redundancy-group-templates by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateL2vpnRedundancyGroupTemplatesRedundancyGroupTemplatesById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: redundancy-group-templates",
+                "parameters": [
+                    {
+                        "required": true,
+                        "description": "redundancy-group-templatesbody object",
+                        "schema": {
+                            "$ref": "#/definitions/RedundancyGroupTemplatesSchema",
+                            "redundancyGroupTemplates": {
+                                "description": "redundancy group templates",
+                                "properties": {
+                                    "redundancyGroupTemplate": {
+                                        "items": {
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                                                },
+                                                {
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string",
+                                                            "description": "name"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "x-key": "name",
+                                        "type": "array",
+                                        "description": "redundancy-group-template"
+                                    }
+                                }
+                            }
+                        },
+                        "name": "redundancy-group-templates",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create redundancy-group-templates by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createL2vpnRedundancyGroupTemplatesRedundancyGroupTemplatesById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Delete operation of resource: redundancy-group-templates",
+                "summary": "Delete redundancy-group-templates by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteL2vpnRedundancyGroupTemplatesRedundancyGroupTemplatesById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/RedundancyGroupTemplatesSchema",
+                            "redundancyGroupTemplates": {
+                                "description": "redundancy group templates",
+                                "properties": {
+                                    "redundancyGroupTemplate": {
+                                        "items": {
+                                            "allOf": [
+                                                {
+                                                    "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                                                },
+                                                {
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string",
+                                                            "description": "name"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "x-key": "name",
+                                        "type": "array",
+                                        "description": "redundancy-group-template"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: redundancy-group-templates",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve redundancy-group-templates",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveL2vpnRedundancyGroupTemplatesRedundancyGroupTemplates"
+            }
+        },
+        "/config/l2vpn/redundancy-group-templates/redundancy-group-template/{name}/": {
+            "put": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Update operation of resource: redundancy-group-template",
+                "parameters": [
+                    {
+                        "description": "ID of name",
+                        "required": true,
+                        "type": "string",
+                        "name": "name",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "redundancy-group-templatebody object",
+                        "schema": {
+                            "$ref": "#/definitions/RedundancyGroupTemplateSchema"
+                        },
+                        "name": "redundancy-group-template",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Update redundancy-group-template by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "updateL2vpnRedundancyGroupTemplatesRedundancyGroupTemplateRedundancyGroupTemplateById"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Create operation of resource: redundancy-group-template",
+                "parameters": [
+                    {
+                        "description": "ID of name",
+                        "required": true,
+                        "type": "string",
+                        "name": "name",
+                        "in": "path"
+                    },
+                    {
+                        "required": true,
+                        "description": "redundancy-group-templatebody object",
+                        "schema": {
+                            "$ref": "#/definitions/RedundancyGroupTemplateSchema"
+                        },
+                        "name": "redundancy-group-template",
+                        "in": "body"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Create redundancy-group-template by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "createL2vpnRedundancyGroupTemplatesRedundancyGroupTemplateRedundancyGroupTemplateById"
+            },
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Delete operation of resource: redundancy-group-template",
+                "parameters": [
+                    {
+                        "description": "ID of name",
+                        "required": true,
+                        "type": "string",
+                        "name": "name",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Delete redundancy-group-template by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "deleteL2vpnRedundancyGroupTemplatesRedundancyGroupTemplateRedundancyGroupTemplateById"
+            },
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "$ref": "#/definitions/RedundancyGroupTemplateSchema"
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "description": "Retrieve operation of resource: redundancy-group-template",
+                "parameters": [
+                    {
+                        "description": "ID of name",
+                        "required": true,
+                        "type": "string",
+                        "name": "name",
+                        "in": "path"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Retrieve redundancy-group-template by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveL2vpnRedundancyGroupTemplatesRedundancyGroupTemplateRedundancyGroupTemplateById"
+            }
+        },
+        "/streams/l2vpn-state-change-notification/": {
+            "get": {
+                "schemes": [
+                    "ws"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "schema": {
+                            "description": "L2VPN and constituents state change notification",
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/EndpointGrp"
+                                },
+                                {
+                                    "properties": {
+                                        "l2vpnInstanceType": {
+                                            "type": "string",
+                                            "description": "The L2VPN instance type",
+                                            "x-path": "/ni:network-instances/ni:network-instance[ni:name=current()/../l2vpn-instance-name]/l2vpn:type"
+                                        },
+                                        "endpoint": {
+                                            "type": "string",
+                                            "description": "The endpoint",
+                                            "x-path": "/ni:network-instances/ni:network-instance[ni:name=current()/../l2vpn-instance-name]/l2vpn:endpoint/l2vpn:name"
+                                        },
+                                        "state": {
+                                            "type": "string",
+                                            "description": "State change notification"
+                                        },
+                                        "l2vpnInstanceName": {
+                                            "type": "string",
+                                            "description": "The L2VPN instance name"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "400": {
+                        "description": "Internal Error"
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "description": "Retrieve operation of resource: l2vpn-state-change-notification",
+                "summary": "Retrieve l2vpn-state-change-notification by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "operationId": "retrieveL2vpnStateChangeNotificationById"
+            }
+        }
+    },
+    "definitions": {
+        "L2vpnCommonParametersGrp": {
+            "description": "L2VPN common parameters",
+            "properties": {
+                "serviceType": {
+                    "type": "string",
+                    "description": "L2VPN service type"
+                },
+                "macAgingTimer": {
+                    "type": "string",
+                    "description": "mac-aging-timer, the duration after whicha MAC entry is considered aged out"
+                },
+                "discoveryType": {
+                    "type": "string",
+                    "description": "L2VPN service discovery type"
+                },
+                "mtu": {
+                    "type": "string",
+                    "description": "MTU of L2VPN service"
+                },
+                "signalingType": {
+                    "type": "string",
+                    "description": "L2VPN signaling type"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of L2VPN service instance"
+                }
+            }
+        },
+        "EndpointGrp": {
+            "description": "A grouping that defines the structure of an endpoint",
+            "properties": {
+                "acOrPwOrRedundancyGrp": {
+                    "description": "A choice ofattachment circuit or pseudowire or redundancy group",
+                    "properties": {
+                        "ac": {
+                            "description": "Attachment circuit(s) as an endpoint"
+                        },
+                        "pw": {
+                            "description": "Pseudowire(s) as an endpoint"
+                        },
+                        "redundancyGrp": {
+                            "description": "Redundancy group as an endpoint",
+                            "properties": {
+                                "backup": {
+                                    "description": "backup options",
+                                    "properties": {
+                                        "backupPw": {
+                                            "description": "backup-pw"
+                                        },
+                                        "backupAc": {
+                                            "description": "backup-ac"
+                                        }
+                                    }
+                                },
+                                "primary": {
+                                    "description": "primary options",
+                                    "properties": {
+                                        "primaryPw": {
+                                            "description": "primary-pw"
+                                        },
+                                        "primaryAc": {
+                                            "description": "primary-ac"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "PbbParametersStateGrp": {
+            "description": "PBB parameters grouping",
+            "properties": {
+                "pbbParameters": {
+                    "description": "pbb-parameters",
+                    "properties": {
+                        "componentType": {
+                            "description": "PBB component type",
+                            "properties": {
+                                "iComponent": {
+                                    "properties": {
+                                        "iSid": {
+                                            "type": "string",
+                                            "description": "I-SID"
+                                        },
+                                        "backboneSrcMac": {
+                                            "type": "string",
+                                            "description": "backbone-src-mac"
+                                        }
+                                    }
+                                },
+                                "bComponent": {
+                                    "properties": {
+                                        "bindBComponentName": {
+                                            "type": "string",
+                                            "description": "Name of the associated b-component"
+                                        },
+                                        "bindBComponentType": {
+                                            "type": "string",
+                                            "description": "Type of the associated b-component"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "PbbParametersGrp": {
+            "description": "PBB parameters grouping",
+            "properties": {
+                "pbbParameters": {
+                    "description": "pbb-parameters",
+                    "properties": {
+                        "componentType": {
+                            "description": "PBB component type",
+                            "properties": {
+                                "iComponent": {
+                                    "properties": {
+                                        "iSid": {
+                                            "type": "string",
+                                            "description": "I-SID"
+                                        },
+                                        "backboneSrcMac": {
+                                            "type": "string",
+                                            "description": "backbone-src-mac"
+                                        }
+                                    }
+                                },
+                                "bComponent": {
+                                    "properties": {
+                                        "bindBComponentName": {
+                                            "type": "string",
+                                            "description": "Reference to the associated b-component"
+                                        },
+                                        "bindBComponentType": {
+                                            "type": "string",
+                                            "description": "Type of the associated b-component"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "RedundancyGroupPropertiesGrp": {
+            "description": "redundancy-group-properties-grp",
+            "properties": {
+                "rerouteMode": {
+                    "enum": [
+                        "immediate",
+                        "delayed",
+                        "never"
+                    ],
+                    "type": "string",
+                    "description": "reroute-mode"
+                },
+                "revertDelay": {
+                    "type": "string",
+                    "description": "amount ot time to wait to revert to primary"
+                },
+                "rerouteDelay": {
+                    "type": "string",
+                    "description": "amount of time to delay reroute"
+                },
+                "revert": {
+                    "type": "boolean",
+                    "description": "allow forwarding to revert to primary after restoring primary"
+                },
+                "protectionMode": {
+                    "enum": [
+                        "frr",
+                        "master-slave",
+                        "independent"
+                    ],
+                    "type": "string",
+                    "description": "protection-mode"
+                },
+                "dualReceive": {
+                    "type": "boolean",
+                    "description": "allow extra traffic to be carried by backup"
+                }
+            }
+        },
+        "BgpSignalingParametersGrp": {
+            "description": "BGP parameters for signaling",
+            "properties": {
+                "siteRange": {
+                    "type": "string",
+                    "description": "Site Range"
+                },
+                "siteId": {
+                    "type": "string",
+                    "description": "Site ID"
+                }
+            }
+        },
+        "L2vpnSchema": {
+            "description": "L2VPN specific data",
+            "properties": {
+                "redundancyGroupTemplates": {
+                    "description": "redundancy group templates",
+                    "properties": {
+                        "redundancyGroupTemplate": {
+                            "items": {
+                                "allOf": [
+                                    {
+                                        "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                                    },
+                                    {
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "description": "name"
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            "x-key": "name",
+                            "type": "array",
+                            "description": "redundancy-group-template"
+                        }
+                    }
+                }
+            }
+        },
+        "RedundancyGroupTemplatesSchema": {
+            "description": "redundancy group templates",
+            "properties": {
+                "redundancyGroupTemplate": {
+                    "items": {
+                        "allOf": [
+                            {
+                                "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                            },
+                            {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "description": "name"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "x-key": "name",
+                    "type": "array",
+                    "description": "redundancy-group-template"
+                }
+            }
+        },
+        "RedundancyGroupTemplateSchema": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/RedundancyGroupPropertiesGrp"
+                },
+                {
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "description": "name"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
